@@ -1,0 +1,57 @@
+
+/* smaller screen, but not quite mobile view yet */
+@media screen and (max-width:1350px) and (min-width:720px) {
+	
+	/* playerArea for medium sized view here */
+	
+	#track-info {
+		width:20%;		
+	}
+	
+	#img-container{
+		width:50px;
+		height:50px;
+    }
+	
+	img#track-image {
+		margin: auto auto;
+	}
+	
+	#track-info-text{ /* artist and name only */
+		overflow-x:hidden;
+		display:none;
+  }
+	
+	#controls {
+		padding:0px;
+		padding-top:10px;
+	}
+	
+	#player-elem {
+		width:35%;
+		margin-top:0px;
+	}
+	
+	#volume-section{
+		max-width:250px;
+		width:60%;
+	}
+		
+	/* iconList area for medium size below here */	
+	.item{
+		width: 150px;
+		height: 260px; 
+		margin:0px;
+		margin-right: 10px;
+		margin-bottom: 15px;
+	}
+
+	.item > img.image, .item > img.overlay{
+		width: 150px;
+		height: 150px;  
+	}	
+	
+	.info {
+		padding: 0px;
+	}
+}

@@ -1,0 +1,309 @@
+#modal {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    z-index:7;
+    transition:opacity 0.2s;
+    visibility:hidden;
+    opacity:0;
+    display:flex;
+	  justify-content: center;
+    align-items:center;
+}
+
+#modal > #modal-bg {
+    position:absolute;
+    background-color:rgba(0,0,0,0.8);
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+#modal > .box {
+    border-radius:5px;
+	  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.99);
+    width:100%;
+    max-width:500px;
+    max-height:95vh;
+    background-color:#121212;
+    color: #8d8d8d;
+    padding:20px 20px 20px 20px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+}
+
+
+#modal > .box > div > .title {
+    font-size: 1.5em;
+}
+
+#modal > .box > div > .content {
+    margin-bottom:10px;
+}
+
+#close-modal {
+  position:absolute;
+  top:0;
+  right:0;
+  xborder: 2px solid #333333; 
+  xmargin:auto;
+  width:10%;
+  aspect-ratio: 1/1;
+
+  xbackground-color: #181818;
+  border-radius: 5px;
+  cursor:pointer;
+  user-select:none;
+  xtext-align:center;
+  font-size:1.5em;
+
+  xbox-shadow: 5px 5px 5px 0px rgba(0,0,0,0.99);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#close-modal > i {
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#close-modal:hover {
+  background-color:#222222;
+}
+
+#close-modal:active {
+  background-color:#1d1d1d;
+	border:2px solid #1db954; 
+}
+
+/* The sleeptimer switch - the box around the slider */
+/* switch by EugenSunic: https://stackoverflow.com/a/57938527 */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    vertical-align: middle;
+    
+    
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(212, 212, 212);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked+.slider {
+    background-color: #1db954;
+    xoutline:0px solid rgb(126, 126, 126);
+  }
+  
+  input:focus+.slider {
+    xbox-shadow: 0 0 1px #1db954;
+  }
+  
+  input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.2);
+    background-color:rgb(43, 43, 43);
+    xoutline: 3px solid rgb(77, 77, 77);
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+#sleep-timer-state-container {
+    height: 34px;
+    line-height:34px;
+    margin-left:10px;
+}
+
+#sleep-timer-state-container > span {
+    color:#199846;
+    
+}
+
+input#playback-duration, 
+input#fadeout-duration {
+    width:100%;
+    xcolor:grey;
+    accent-color:#189945;
+    xbackground-color:red;
+    border-radius:50px;
+    xborder:2px solid rgb(77, 77, 77);
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.2);
+    margin-top:5px;
+}
+
+#playback-duration-label,
+#fadeout-duration-label {
+  color:#188a99;
+}
+
+datalist {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    xmargin-top: 7px;
+    xpadding: 0 5px;
+}
+
+#sleep-timer-data {
+    background-color:rgba(0,0,0,0.5);
+    border-radius:5px;
+    width:100%;
+    padding:10px;
+}
+
+/* Share modal */
+#share-content > .content > .url-cont {
+  background-color:rgba(0,0,0,0.5);
+  border-radius:5px;
+  padding:5px;
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+#share-content > .content > .url-cont > input.url {
+  width:90%;
+  border:1px solid rgb(39, 39, 39);
+  background-color: rgba(0,0,0,0.0);
+  color:white;
+  padding:5px;
+  border-radius:5px;
+}
+
+#share-content > .content > .url-cont > .copy.button {
+  border-radius:5px;
+  background-color:rgba(0,0,0,0.3);
+  padding:10px;
+  cursor:pointer;
+  background-color: rgb(51, 181, 96);
+  color:black;
+  margin-left:5px;
+  height:50%;
+  aspect-ratio: 1/1;
+  user-select:none;
+  font-weight:600;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#share-content > .content > .url-cont > .copy.button > i {
+  pointer-events:none;
+  margin-right:5px;
+}
+
+#share-content > .content > .url-cont > .copy.button:hover {
+  background-color: rgb(36, 222, 101);
+}
+
+#share-content > .content > .url-cont > .copy.button:active  {
+  background-color: rgb(29, 185, 84);
+}
+
+#share-content > .content > .copy-status {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding:10px;
+  color:white;
+}
+
+#share-content > .content > .social-buttons {
+  width:100%;
+  height:30%;
+  padding: 20px;
+  display:flex;
+  align-items: center;
+  justify-content: start;
+  position:relative;
+}
+
+#share-content > .content > .social-buttons > a.button {
+  max-width:100px;
+  border-radius:5px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  cursor:pointer;
+  padding:10px;
+  text-decoration: none;
+}
+
+#share-content > .content > .social-buttons > a.button:active {
+  background-color:rgba(255,255,255,0.1)
+}
+
+#share-content > .content > .social-buttons > a.button > .image-cont {
+  height:80%;
+  aspect-ratio: 1/1;
+  margin-bottom:10px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#share-content > .content > .social-buttons > a.button > .image-cont > img.image {
+  width:100%;
+  height:100%;
+}
+
+#share-content > .content > .social-buttons > a.button > .label {
+  height:20%;
+  width:100%;
+  text-align: center;
+  color:white;
+}
+
+

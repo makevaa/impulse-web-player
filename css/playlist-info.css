@@ -1,0 +1,138 @@
+#playlist-info {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding: 10px 10px 20px 10px;
+    border-bottom: 1px solid #262626;
+    margin-bottom:20px;
+    transition: background-color 0.2;
+}
+
+#playlist-info > .gradient-layer {
+	position:absolute;
+    top:0;
+	margin: -20px -10px -10px -10px;
+	width:calc(100% + 20px);
+    min-height:100px;
+	height:40%;
+	z-index:0;
+	border-radius: 5px 5px 0px 0px;
+    background-color:#121212;
+}
+
+#playlist-info.hidden {
+    display:none;
+}
+
+#playlist-info > .image-cont {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:150px;
+    aspect-ratio: 1/1;
+    position:relative;
+    z-index:1;
+}
+
+#playlist-info > .image-cont > img.image {
+    border-radius:5px;
+    width:100%;
+    height:100%;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.55);
+}
+
+#playlist-info > .image-cont > img.image.small {
+    position:absolute;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.0);
+}
+
+#playlist-info > .info {
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    flex:1;
+    padding : 10px 10px 10px 20px;
+    z-index:1;
+}
+
+#playlist-info > .info > .type{
+    color:grey;
+}
+
+#playlist-info > .info > .name{
+    font-size:1.5em;
+}
+
+#playlist-info > .info > .desc{
+    color:grey;
+}
+
+#playlist-info > .info > .track-amount{
+    color:grey;
+}
+
+
+/* Action buttons in playlist info area, Play and Share buttons */
+#playlist-info > .info > .buttons {
+   display:flex;
+   justify-content: start;
+   align-items: center;
+   margin-top:5px;
+}
+
+
+#playlist-info > .info > .buttons > .button-cont {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:5px;
+    cursor:pointer;
+    color:grey;
+}
+
+#playlist-info > .info > .buttons > .button-cont.play {
+    width:60px;
+    height:60px;
+    margin-right:5px;
+}
+
+#playlist-info > .info > .buttons > .button-cont.play > .play {
+    width:100%;
+    height:100%;
+    background-color:#1db954;
+    border-radius:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: #121212;
+}
+
+#playlist-info > .info > .buttons > .button-cont.play > .play > i {
+    font-size:1.3em;
+}
+
+#playlist-info > .info > .buttons > .button-cont.play:hover .play{
+    background-color:#2aee6e;
+    transform:scale(1.02);
+}
+
+#playlist-info > .info > .buttons > .button-cont.play:active .play {
+    background-color:#16833c;
+    transform:scale(1);
+}
+
+#playlist-info > .info > .buttons > .button-cont.share {  
+    border-radius:5px;
+    background-color:rgba(0,0,0,0.3);
+    padding:5px 10px 5px 10px;
+}
+
+#playlist-info > .info > .buttons > .button-cont.share:hover {
+    background-color:rgba(255,255,255,0.05);
+} 
+
+#playlist-info > .info > .buttons > .button-cont.share:active {
+    background-color:rgba(255,255,255,0);
+} 

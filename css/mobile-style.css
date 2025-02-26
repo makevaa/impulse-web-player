@@ -1,0 +1,366 @@
+@media screen and (max-width:720px) {
+
+	body{
+		width: 100vw;
+		margin: 0px;
+		padding:0px;
+		overflow-x:hidden;
+		transition: all 0s;
+	}
+		
+	#content{
+		font-size: 1em;
+		padding: 0px;
+		margin:0px;
+		color: #DCEBDD;  
+		letter-spacing:	0px;	
+		flex-direction: column;
+	}
+	
+	/* top area in playlist, has list name and track amount */
+	#topbar{
+		margin-top:0px;
+		width:100vw;
+	}
+
+	#topbar > .title-area {
+		height:100%;
+		aspect-ratio: 1/1;
+		width:auto;
+	}
+
+	#topbar > .title-area > .title-cont {
+		display:none;
+	}
+
+	#topbar > .title-area > .image-cont {
+		display:none;
+	}
+
+	#topbar > .title-area > .buttons {
+		display:flex;
+	}
+
+	#topbar > .mid > .playlist-info {
+		display:none;
+	}
+
+	#topbar > .mid  {
+		flex:1;
+		justify-content: center;
+	}
+
+	#topbar > .mid > #search-container {
+		width:80%;
+		height:100%;
+		margin-left:0px;
+	}
+
+	#topbar > .mid > #search-container > #search {
+		flex:1;
+		height:70%;
+	}
+
+	#topbar > .mid > #search-container > #clear-search {
+		height:100%;
+		aspect-ratio: 1/1;
+		width:auto;
+		font-size:1.5em;
+		margin-right:-5px;
+	}
+
+	#topbar > .mid > .mobile-title-image-cont {
+		display:flex;
+	}
+
+	#topbar > .kebab-cont  {
+		width:auto;
+		height:100%;
+		aspect-ratio: 1/1;
+	}
+
+	.kebab-cont > .kebab > .icon:hover {
+		color:auto; 
+	} 
+	
+	#status-container{
+		height:20px;
+	}
+		
+	#track-items.tile{
+		padding-left: 0px;
+		padding:0px;
+		margin:0px;
+		transition: opacity 0s;
+	}
+	
+	#track-items.tile > .item{
+		width: 43vw;
+		height: 70vw;
+		padding:0px;
+		position: relative;
+		user-select: none;
+	}	
+	
+	#track-items.tile > .item > .image-cont > img.image{
+		width:43vw;
+		height:43vw;
+		-webkit-box-shadow:none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		-webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.55);
+		-moz-box-shadow: 	0px 0px 10px 3px rgba(0,0,0,0.55);
+		box-shadow:		 	0px 0px 10px 3px rgba(0,0,0,0.55);
+		box-shadow: 10px 0 5px px #888;
+	}	
+	
+	#track-items.tile > .item > .image-cont > img.overlay{
+		width: 43vw;
+		height: 43vw; 
+		opacity:0;
+		z-index: 0;
+	}
+
+	#track-items.tile > .item > .info {
+		padding: 0px;
+		overflow:hidden;
+	}
+	
+	#track-items.tile > .item > .info > .track{
+		-webkit-line-clamp: 3; /* number of lines to show */
+		transition:all 0s;
+	}
+
+	#track-items.row {
+		max-width:95vw;
+		transition: opacity 0s;
+	}
+
+	#track-items.row > .item {
+		padding:10px 0px 10px 5px;
+		height: 17%;  
+	}
+
+	#track-items.row > .item > .number {
+		display:none;
+	}
+
+	#track-items.row > .item > .info {
+		font-size:1em;
+		width:calc(100% - 40px);
+	}
+
+	#track-items.row > .item > .info > .artist, 
+	#track-items.row > .item > .info > .album {
+		transition:all 0s;
+	}
+
+	#track-items.row > .item > .image-cont {
+		height: 100%; 
+		aspect-ratio: 1/1;
+		width:auto;
+	}
+
+	#track-items.row > .item > .image-cont > img.image,
+	#track-items.row > .item > .image-cont > .overlay,
+	#track-items.row > .item > .image-cont > .overlay-playing {
+		height: 80%; 
+		aspect-ratio: 1/1;
+		width:auto;
+	}
+
+	.item > .overlay, .item > .image-cont > .overlay-playing,
+	.item > .image-cont > img.image{
+		transition: all 0.0s;
+		border-radius:3px;
+	}
+
+	#track-items > .item > .overlay-playing {
+		border:0px solid #1db954
+	}
+
+	#img-container, 
+	#track-info {
+		display:none!important;
+	}
+    
+    #player-area{
+        height:200px;
+		border-top: 0px solid #383838;
+		border-bottom: 2px solid #383838;
+		display:block;
+    }
+	
+	#controls{
+		width:100%;
+		height:100%;
+		padding:0px;
+		display:flex;
+		justify-content: start;
+		align-items: center;
+	}
+
+	#controls > .section {
+		padding:0px;
+		margin:0px;
+		display:flex;	
+		width:100%;
+	}
+
+	#controls > .section.seekbar{
+		height:30%;
+	}
+
+	#controls > .section.main{
+		margin:0px;
+		z-index:1;
+		padding:5px;
+		height:40%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	#controls > .section.main > #play-button-container.button {
+		height:75px;
+	}
+
+	#controls > .section.main > #play-button-container.button:hover {
+		background-color:#a19f9f;
+	}
+
+	#controls > .section.extra{
+		justify-content: space-around;
+		height:15%;
+	}
+
+	#controls > .section.volume{
+		display:none!important;
+	}
+
+	#controls > .section.label{
+		visibility:visible;
+		display:flex;
+		height:15%;
+	}
+
+	#controls > .section >  .seekbar-cont:hover .filled {
+		background-color:rgb(185, 185, 185)!important;
+	}
+
+	#controls > .section > .button {
+		margin-bottom:0px;
+		transition: all 0s!important;
+		padding:25px;
+		margin:0px;
+		float:none;
+		display:inline-flex;
+		text-shadow: 0px 0px 0px black;
+	}
+
+	#controls > .section > .button:hover{
+		filter:none;
+	}
+
+	#controls > .section >  .button:active{
+		background-color: rgba(191, 191, 191, 0.2);
+	}
+
+	#controls > .section > .button > .icon {
+		width:100%;
+		height:100%;
+		margin:0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;  
+	}
+
+	#controls > .section > .toggle-button {
+		margin:0px;
+	}
+
+	#controls > .section > .toggle-button:hover {
+		filter:none;
+	}
+
+	#controls > .section > .toggle-button#btn-random {
+		text-shadow:none;
+	}
+
+	#controls > .section > .toggle-button#btn-toggle-track-view {
+		text-shadow:none;
+	}
+
+	#controls > .section > .toggle-button#btn-toggle-theme {
+		display:none;
+	}
+
+	#controls > .section > .toggle-button#btn-toggle-view {
+		display:none;
+	}
+	
+	#player-elem{
+		border:3px solid #1a9b47;
+		box-shadow:0px -5px 5px 0px rgba(0,0,0,0.7);
+		width:100vw;
+		height:200px;
+		float:none;
+		position:absolute;
+		bottom:0;
+		margin-bottom:200px;
+	} 
+
+	.content{
+		padding:0px;
+	}
+
+	#sidebar {
+		width:95%;
+	}
+
+	#sidebar > .header {
+		font-size:1.3em;
+	}
+
+	#sidebar > .header > i {
+		display:none;
+	}
+
+	#sidebar > .playlists > .playlist-item {
+		padding:10px;
+	}
+
+	#playlist-info {
+		margin-bottom:40px;
+	}
+
+	#playlist-info > .image-cont {
+		width:40%;
+	}
+
+	#right-side {
+		width:100%;
+		height:100%;
+		margin: 10px 10px 5px 5px;
+	}
+
+	#track-view {
+		height: calc(100% - 350px + 1px);
+	}
+
+	#track-view > .info > .image-container {
+		width:70%;
+		height:auto;
+	}
+
+	#modal > .box {
+		padding: 20px 10px 20px 10px;
+		width:95%;
+	}
+
+	#close-modal {
+		width:20%;
+	}
+	
+}
+

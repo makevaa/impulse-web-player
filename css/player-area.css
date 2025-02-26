@@ -1,0 +1,284 @@
+#player-area {
+	background-color:#121212;
+	width:100%;
+	height:200px;
+	color:white;
+	z-index:5;
+	position:fixed;
+	transition:height 0.1s;
+	visibility:hidden;
+	opacity:0;
+	display:flex;
+	align-items: center;
+	align-self: end;
+	bottom:0;
+}
+
+#player-elem {
+	box-sizing: border-box;
+	min-width:200px;
+	height:200px;
+	float:right;	
+	padding:0px;
+	margin:0px;	
+	border:1px solid #171717;
+	z-index:4;
+	flex: 1;
+	transition: right 0.2s marginBottom 0.2s;
+}
+
+
+/* desktop view: track info on left side of player area */
+#track-info {
+	width:35%;
+	display:block;
+	overflow:hidden;
+	padding:5px;
+	display:flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+}	
+
+#track-info > .top {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+	height:80%;
+}
+
+#track-info > .bot {
+	display:flex;
+	justify-content: start;
+	align-items: center;
+	width:100%;
+	height:80%;
+}
+	
+#track-info > .top > .image-cont {
+	width:20%;
+	aspect-ratio: 1/1;
+	padding:5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#track-info > .top > .image-cont > img.image {
+	border-radius:5px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.55);
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.55);
+	aspect-ratio: 1/1;
+	max-width:100px;
+	width:100%;
+	height:100%;
+	display:inline-block;
+}
+
+#track-info > .top > .name {
+	height:100px;
+	overflow:hidden;
+	padding: 5px;
+	margin-left:5px;
+	text-shadow: 1px 1px 0px black;
+	font-size:1em;
+	color:#b3b3b3;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	width:100%;
+}
+
+#track-info > .top > .name > .track {
+	margin-bottom:5px;
+	color:#e6e6e6;
+	transition: text-shadow 0.2s;
+	overflow:hidden;
+	width:100%;
+	height:50%;
+	max-width:100%;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: end;
+}
+
+#track-info > .top > .name > .artist {
+	height:50%;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+}
+
+
+#track-info > .bot > .video-name {
+	margin-top:10px;
+	color:#6d6d6d;
+	height:50px;
+	overflow:hidden;
+	padding:10px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+#track-info > .bot > .video-name > .link {
+	border:1px solid rgba(0, 0, 0, 0);
+	border-radius:5px;
+	cursor:pointer;
+	padding:10px;
+}
+
+#track-info > .bot > .video-name > .link:hover {
+	color:#bdbdbd;
+	background-color:rgba(255, 255, 255, 0.1)
+}
+
+#controls{
+	width: 30%;
+	height:100%;
+	padding:0px 0px 0px 0px;
+	user-select:none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	justify-content: start;
+}
+
+#controls > .section {
+	width:100%;
+	height:33%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* the play, previous, next, stop and pause/play button down in the player area */
+#controls > .section > .button {
+	cursor:pointer;	
+	transition: all 0s;
+	color: #a19f9f; /* a19f9f */
+	text-align: center;
+	font-size: 1.5em;
+	border-radius:6px;
+	width: 50px;
+	height:50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;  
+	margin: 0px 10px;
+}
+
+#controls > .section > .button:hover{
+	filter:brightness(1.3);
+}
+
+
+/* make play button bigger with round background */
+#controls > .section  > #play-button-container.button {
+	background-color:#a19f9f;
+	height:100%;
+	aspect-ratio: 1/1;
+	width: auto;
+	border-radius:50px;
+	color:#121212;
+}
+
+
+/* button section .button font-awaesome icon */
+#controls > .section > .button > .icon {
+	width:100%;
+	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;  
+}
+
+.toggle-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;  
+	cursor:pointer;
+	color: #a19f9f;
+	font-size: 1.3em;
+	border-radius:4px;
+	margin: 0px 10px;
+	width: 50px;
+	height:50px;
+}
+
+.toggle-button:hover {
+	filter:brightness(1.3);
+}
+
+.toggle-button > .icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;  
+}
+
+.toggle-button > .icon > i {
+	display: flex;
+	justify-content: center;
+	align-items: center;  
+}
+
+#btn-toggle-view.toggle-button {
+	display:none;
+}
+
+#controls > .section.label{
+	visibility:hidden;
+	display:none;
+	align-items: center;
+	justify-content: start;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	color:grey;
+	font-size:1em;
+	background-color:rgba(0,0,0,0.5);
+}
+
+#controls > .section.label > .color-light-cont {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	width:10%;
+	aspect-ratio: 1/1;
+	padding:5px;
+}
+
+#controls > .section.label > .color-light-cont > .color-light {
+	width: 30%;
+	aspect-ratio: 1/1;
+	border-radius:10px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#controls > .section.label > .label	{
+	width:90%;
+	height:100%;
+	display:flex;
+	align-items: center;
+	justify-content: start;
+	padding-right:5px;
+	overflow: hidden;
+	min-width:0px;
+}
+
+#controls > .section.label > .label	> div {
+	width:100%;
+	overflow:hidden;
+	display:inline-block;
+	text-overflow: ellipsis;
+	overflow: hidden; 
+	white-space: nowrap;
+}

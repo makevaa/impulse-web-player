@@ -1,0 +1,99 @@
+#topbar > .mid {
+	height: 100%;
+    flex:1;
+	color:#DCEBDD; 
+	display:flex;
+	justify-content: start;
+	align-items:center;
+}
+
+#topbar > .mid > .playlist-info {
+	width:20%;
+	height:100%;
+    display:flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items:end;
+    color:grey;
+    padding-right:10px;
+}
+
+#topbar > .mid > .playlist-info > .name {
+	color:auto;
+}
+
+#topbar > .mid > .playlist-info > .track-amount {
+    font-size:0.8em;
+}
+
+#search-container {
+	position:relative;
+	height:100%;
+	width:50%;
+	transition: all 0.25s cubic-bezier(0.72, 1.2, 0.71, 0.72);
+	display:none;
+	justify-content: start;
+	align-items:center;
+	margin-left:10px;
+}
+
+#search {
+	border:2px solid rgba(94, 94, 94, 0);
+	border:none;
+	border-radius:50px;
+	width:100%;
+	height:80%;
+	font-size:1em;
+	font-weight:400;
+	font-family: 'Roboto', sans-serif;
+	padding: 0px 5px 0px 10px;
+	background-color:#202425;
+	color:white;
+}
+
+#search:focus {
+	border:2px solid #1db954; 
+	outline: none !important;
+}
+
+#clear-search {
+	position:absolute;
+	right:0;
+	width: 40px;
+	aspect-ratio: 1/1;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	font-size:1.7em;
+	cursor:pointer;
+	color:rgb(101, 101, 101);
+}
+
+#clear-search:hover {
+	color:rgb(85, 85, 85);
+}
+
+#clear-search:active {
+	color:rgb(51, 51, 51);
+}
+
+#topbar > .mid > .image-cont {
+	display:none;
+}
+
+#topbar > .mid > .mobile-title-image-cont {
+    width:40px;
+    aspect-ratio: 1/1;
+    display: none;
+	justify-content: center;
+	align-items: center;
+    padding:5px;
+    transition: opacity 0.2s;
+}
+
+#topbar > .mid > .mobile-title-image-cont > img {
+    width:100%;
+    height:100%;
+    aspect-ratio: 1/1;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+}

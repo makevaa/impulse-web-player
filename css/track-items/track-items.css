@@ -1,0 +1,89 @@
+/* item-list.css */
+
+/* Styles for both styles, tile and row list */
+
+#track-items-cont {
+	width:100%;
+	height:100%;
+	position:relative;
+	display:flex;
+	flex-direction: column;
+}
+
+#track-items {
+	position:relative;
+	height:100%;
+	width:100%;
+	transition: opacity 1.5s;
+	display:flex;
+	flex-direction: column;
+}
+
+#track-items > .item {
+	position:relative;
+	border-radius:5px;
+	user-select: none;
+	cursor:pointer;
+}
+
+#track-items > .item.disabled {
+	opacity:0.3;
+}
+
+#track-items > .item > .info {
+	pointer-events:none;
+}
+
+#track-items > .item:active .artist, 
+#track-items > .item:active .track{
+	color: #1db954;
+}
+
+#track-items  > .item > .number {
+	display:none;
+	
+}
+
+#track-items > .item > .image-cont {
+	pointer-events:none;
+}
+
+#track-items > .item > .image-cont > img.image{
+	border-radius:5px;
+	z-index: -1;
+	-webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.55);
+	-moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.55);
+	user-select:none;
+	box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.55);
+}
+
+#track-items > .item > .image-cont > .overlay, 
+#track-items > .item > .image-cont > .overlay-playing {
+	position:absolute;
+	width: 100%;
+	height: 100%;  
+	opacity:0;
+	z-index: 2;
+	user-select:none;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background-color:rgba(0,0,0,0.6);
+}
+
+#track-items > .item.playing > .image-cont > .overlay{
+	display:none;
+}
+
+#track-items > .item > .image-cont > .overlay-playing {
+	border-radius:5px;
+	border:2px solid #1db954
+}
+
+#track-items  > .item:hover .overlay {
+	xtransition: opacity 0.05s ease-in; opacity:1;
+}
+
+#track-items  > .item.playing > .image-cont > .overlay-playing {
+	opacity:1;
+}

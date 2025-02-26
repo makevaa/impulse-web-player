@@ -1,0 +1,114 @@
+/*  style.css */
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+	zoom: reset;
+}
+
+*:focus {
+    outline: none;
+	border:none;
+}
+
+.darkener {
+	width:100%;
+	height:100%;
+	position:absolute;
+	background-color:rgba(0,0,0,0.6);
+	z-index:-1;
+}
+
+.hidden {
+	display:none;
+}
+
+.clearfix {
+	clear:both;
+}
+
+html{
+	padding:0px;
+	margin:0px;
+	zoom: reset;
+	line-height: 1;
+}
+	
+body{
+	background-color: black;
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+	padding:0px;
+	margin:0px;	
+	width:100vw;
+	height:100vh;
+	transition:all 0.3s;
+	zoom: reset;
+	display:flex;
+	flex-direction: column;
+}
+
+#content {
+	position:relative;
+	overflow:hidden;
+	color:#DCEBDD; 
+	display:flex;
+	flex:1;
+	width:100%;
+	height:calc(100vh - 250px);
+}
+
+.clearfix{
+    clear:both
+}
+
+.page-title{
+	visibility:hidden;
+}
+
+.green{
+	color:#1db954;
+	padding:50px;
+}
+
+#loading-icon-container {
+	z-index:6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color:#1db954;
+	font-size:6em; 
+	transition:opacity 0.3s;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity:1;
+	visibility:visible;
+}
+
+#loading-icon-container > #spinner-container > i {
+	text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+}
+
+
+/*footer to add margin at the end of playlist */
+#footer {
+	width:100vw;
+	height:300px;
+}
+
+#right-side {
+	border-radius:5px;
+	height:95%;
+	width:95%;
+	margin:10px 10px 10px 0px;
+	background-color:#121212;
+	overflow-y:scroll;
+	scroll-behavior: smooth;
+	padding:10px;
+	transition:opacity 0.2s;
+    opacity:0;
+}

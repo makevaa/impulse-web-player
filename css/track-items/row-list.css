@@ -1,0 +1,161 @@
+#track-items.row {
+	display:flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+
+}
+
+#track-items.row > .item {
+	border-bottom:1px solid #1d1d1d;
+	line-height: 1;
+	width: 100%;
+	padding:5px 0px 5px 10px;
+	margin:0px;
+	display: flex;
+	align-items:center;
+	justify-content: start;
+}
+
+#track-items.row > .item:hover {
+	background-color: #1d1d1d;
+} 
+
+#track-items.row > .item:active {
+	background-color: #252525;
+} 
+
+#track-items.row > .item.playing{
+	background-color: #2e2e2e;
+}
+
+#track-items.row > .item > .info {
+	color: #DCEBDD ;
+	padding: 5px;
+	display:flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	font-size:0.9em;
+	margin-left:10px;
+	letter-spacing:0.2px;
+}
+
+#track-items.row  > .item > .number {
+	width:50px;
+	height:100%;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	color:grey;
+	pointer-events:none;
+}
+
+
+#track-items.row > .item > .info > .track {
+	font-weight: 500;
+	font-size: 1em;
+    color:#ffffff; 
+	margin-bottom:5px;
+	letter-spacing:0.3px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1; 
+	-webkit-box-orient: vertical;
+}
+
+#track-items.row  > .item.playing > .info > .track{
+	color:#1db954;
+}
+
+#track-items.row > .item > .info > .artist, 
+#track-items.row > .item > .info > .album {
+	font-weight: 400;
+	font-size: 1em;
+    color:#b4b4b4;
+	display:inline-block;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1; 
+	-webkit-box-orient: vertical;
+}
+
+
+#track-items.row > .item > .image-cont {
+	border-radius:5px;
+	pointer-events:auto;
+	cursor:pointer;
+	width: 40px;
+	height: 40px;  
+	z-index: 1;
+	position:relative;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+#track-items.row > .item > .image-cont > img.image{
+	width: 100%;
+	height: 100%;  
+	z-index: 1;
+	pointer-events:none;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+#track-items.row > .item > .image-cont > .overlay-playing {
+	background-color:rgba(0,0,0,0.8);
+}
+
+#track-items.row > .item > .image-cont > .overlay, 
+#track-items.row > .item > .image-cont > .overlay-playing{
+	width: 40px;
+	height: 40px; 
+	cursor:pointer;
+	pointer-events:none;
+	border-radius:5px;
+}
+
+#track-items.row > .item > .image-cont > .overlay > i, 
+#track-items.row > .item > .image-cont > .overlay-playing > i{
+	font-size:1.5em;
+	pointer-events:none;
+}
+
+/* Show buttons on track items (eg. Share) on item hover only */
+
+#track-items.row > .item > .buttons {
+	height:100%;
+	width:100px;
+	display:none;
+	align-items: center;
+	justify-content: end;
+	flex:1;
+	padding-right:5px;
+	pointer-events:none;
+}
+
+#track-items.row > .item:hover .buttons, 
+#track-items.row > .item.playing > .buttons {
+	display:flex;
+}
+
+#track-items.row > .item > .buttons > .button {
+	height:100%;
+	aspect-ratio: 1/1;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	border-radius:5px;
+	pointer-events:auto;
+}
+
+#track-items.row > .item > .buttons > .button > i {
+	pointer-events:none;
+}
+
+#track-items.row > .item > .buttons > .button:hover {
+	background-color: rgba(0,0,0,0.5);
+}

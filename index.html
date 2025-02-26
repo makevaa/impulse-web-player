@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang='en'> 
+
+	<head>
+		<meta charset='utf-8'/>
+		<title>Impulse</title>
+		<meta name="keywords" content="Music player, music, player, browser, HTML, CSS, JavaScript, client-side, client side">
+		<meta name="description" content="Music player for browser.">
+		<meta property="og:title" content="Impulse web player" />
+		<meta property="og:description" content="Music player for browser." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://chazu.arkku.net/misc/music-list/yt-player-5/" />
+		<meta property="og:image" content="icon/android-chrome-384x384.png" />
+        
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+		<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>
+		<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>  
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js'></script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+			
+		<link media='screen' href='css/player-area.css' type='text/css' rel='stylesheet'/> 		
+		<link media='screen' href='css/style.css' type='text/css' rel='stylesheet'/> 
+
+		<link media='screen' href='css/topbar/topbar.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/topbar/title.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/topbar/mid.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/topbar/kebab.css' type='text/css' rel='stylesheet'/> 
+
+		<link media='screen' href='css/modal.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/sidebar.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/scrollbar.css' type='text/css' rel='stylesheet'/> 
+
+		<link media='screen' href='css/track-items/track-items.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/track-items/tile-list.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/track-items/row-list.css' type='text/css' rel='stylesheet'/> 
+
+		<link media='screen' href='css/playlist-info.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/volume-slider.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/seekbar.css' type='text/css' rel='stylesheet'/> 
+		<link media='screen' href='css/track-view.css' type='text/css' rel='stylesheet'/> 
+
+		<link media='screen' href='css/medium-style.css' type='text/css' rel='stylesheet'/> 			
+		<link media='screen' href='css/mobile-style.css' type='text/css' rel='stylesheet'/> 
+		
+		<!--<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous'> -->
+		<script rel="preload" src='https://kit.fontawesome.com/5ed908a148.js' crossorigin='anonymous'></script>		
+
+
+		<!--<meta name='viewport' content='width=device-width, initial-scale=1'>-->
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, height=device-height, target-densitydpi=device-dpi">
+		
+
+		<link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+		<link rel="manifest" href="icon/site.webmanifest">
+		<link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#00aba9">
+		<meta name="theme-color" content="#212121">
+
+		<meta name='msapplication-navbutton-color' content='#212121'><!-- Windows Phone -->		
+		<meta name='apple-mobile-web-app-status-bar-style' content='#212121'><!-- iOS Safari -->
+
+		
+	</head>
+	
+	
+	<body>
+
+		<div id='modal'>
+			<div id='modal-bg'></div>
+			<div class='box'>
+				<div id='about-content'>
+					<div class='title about'>About Impulse</div>
+					<div class='content about'>
+						<p>Impulse web player is a JavaScript-based YouTube music player.</p> 
+						<p>The app works in the browser with no server-side code.<br> 
+							The music data is read from a JSON file and displayed. The data is managed on my local system and cannot be edited in the browser in any way.</p>
+						<p>I created Impulse to have my own music library instead of it being on a 3rd party service.</p>
+						<p>You can contact me (the developer) via email: markus.vaananen(at)gmail.com
+					</div>
+				</div>
+				<div id='sleep-timer-content'>
+					<div class='title sleep-timer'>Sleep Timer</div>
+					<div class='content sleep-timer'>
+						<p>Sleep timer plays music for the set duration. The volume is gradually faded out towards the end.</p>
+						<label class="switch">
+							<input id="sleep-timer-switch" type="checkbox">
+							<span class="slider round"></span>
+						</label>
+						<span id='sleep-timer-state-container'>
+							Sleep timer is <span>OFF</span>
+						</span>
+						<br><br>
+						Playback duration: <span id='playback-duration-label'>3 hours</span>
+						<div class="range">
+							<input id='playback-duration' type="range" value="3" min="1" max="6" step="1" list="number"/>
+							<datalist class="range__list" id="number">
+								<option class="range__opt">1</option> 
+								<option class="range__opt">2</option> 
+								<option class="range__opt">3</option> 
+								<option class="range__opt">4</option> 
+								<option class="range__opt">5</option> 
+								<option class="range__opt">6</option> 
+							</datalist>
+						</div>
+						<br>
+						Fadeout duration: <span id='fadeout-duration-label'>10 minutes</span>
+						<div class="range">
+							<input id='fadeout-duration' type="range" value="10" min="0" max="60" step="10" list="number" />
+							<datalist class="range__list" id="number">
+								<option class="range__opt">0</option> 
+								<option class="range__opt">10</option> 
+								<option class="range__opt">20</option> 
+								<option class="range__opt">30</option> 
+								<option class="range__opt">40</option> 
+								<option class="range__opt">50</option> 
+								<option class="range__opt">60</option> 
+							</datalist>
+						</div>
+						<br>
+						<div id='sleep-timer-data'>
+							Time left: <span id='time-left'>(sleep timer off)</span>
+						</div>
+					</div>
+				</div>
+
+				<div id='share-content'>
+					<div class='title share'>Share</div>
+					<div class='content share'>
+
+						<div class='social-buttons'>
+							<a class='button telegram' target='_blank'>
+								<div class='image-cont'>
+									<img class='image' src='https://i.imgur.com/VEnxX4k.png'/>
+								</div>
+								<div class='label'>Telegram</div>
+
+							</a>
+						</div>
+
+						<div class='url-cont'>
+							<input class='url' readonly />
+							<div class='copy button'><i class="fa-regular fa-copy"></i> Copy</div>
+						</div>
+						<div class='copy-status'>Press "Copy" button to copy url to clipboard</div>
+					</div>
+				</div>
+
+			
+
+				<div id='close-modal'><i class="fa-solid fa-xmark"></i></div>
+			</div>
+		</div>
+
+
+		<div id='loading-icon-container'>
+			<div id='spinner-container'>
+				<i class='fas fa-cog fa-spin'></i>
+			</div>
+		</div>
+
+		
+		<div id='topbar'>
+			<!--<div id='topbar-darkener' class='darkener'></div>-->
+
+			<div class='title-area'>
+				<div class='image-cont'>
+					<img src='icon/android-chrome-384x384.png'>
+				</div>
+
+				<div class='buttons'>
+					<div class='button toggle-sidebar'><i class="fa-solid fa-list"></i></div>
+				</div>
+
+				<div class='title-cont'>
+					<div class='title'>Impulse web player</div>
+					<div class='version'>v0.5.3</div>
+				</div>
+			</div>
+
+
+
+			<div class='mid'>
+				<div class='playlist-info'>
+					<div class='name'></div>
+					<div class='track-amount'></div>
+				</div>
+				
+				<div id='search-container'>
+					<input type="text" id="search" onkeyup="searchFromPlaylist()" placeholder="Filter playlist...">
+					<div id='clear-search'  onclick="clearSearchBar()">
+						<i class="fa-solid fa-circle-xmark"></i>
+					</div>
+				</div>
+
+				<div class='mobile-title-image-cont'>
+					<img src='icon/android-chrome-384x384.png'>
+				</div>
+			</div>
+
+	
+
+			<div id='main-kebab' class='kebab-cont'>
+				<div class="kebab">
+	
+					<div class="icon open active"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+					<div class="icon close "><i class="fa-solid fa-xmark"></i></div>
+		
+					<ul class="dropdown">
+					  <li><a id='sleep-timer'>Sleep timer OFF</a></li>
+					  <li><a id='about'>About</a></li>
+					  <li><a onclick="location.reload()">Reload app</a></li>
+					  <li><a id='exit'>Exit app</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>	
+
+		<div id='topbar-margin'></div>
+
+
+
+		<div id='content'>	
+
+			<div id='sidebar'>
+				<div class='header'><i class="fa-solid fa-list"></i>Playlists</div>
+				<div class='playlists'></div>
+			</div>
+
+			<div id='track-view'>
+				<!--<div id='track-view-darkener' class='darkener'></div>-->
+				<div class='info'>
+					<div class='image-container'>
+						<img id='track-view-image' crossorigin='anonymous' src='https://i.imgur.com/OgvGLJt.jpeg'>
+					</div>
+					
+					<div class='name-container'>
+						<div id='track-view-name'>No playlist selected</div>
+					</div>
+
+					<div class='artist-container'>
+						<div id='track-view-artist'>Select playlist and press play</div>
+					</div>
+				</div>
+			</div>
+		
+
+
+			<div id='right-side'>
+				<div id='track-items-cont'>
+					<div id='playlist-info' class='hidden'>
+						<div class='gradient-layer'></div>
+						<div class='image-cont'><img class='image small'/><img class='image'/></div>
+						<div class='info'>
+							<div class='type'>playlist type</div>
+							<div class='name'>playlist name</div>
+							<div class='desc'></div>
+							<div class='track-amount'>0 tracks</div>
+							<div class='buttons'>
+								<div class='button-cont play'>
+									<div class='play'><i class="fa-solid fa-play"></i></div>
+								</div>
+								<div class='button-cont share'>
+									<div class='share'><i class="fa-solid fa-share"></i> Share</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+					<div class='separator-line'></div>
+					<div id='track-items'></div> 
+				</div> 
+			</div>
+			
+
+		</div>
+
+	
+
+
+	
+        
+        
+       
+		
+
+		<div id='player-area'>
+			<!--<div id='player-area-darkener' class='darkener'></div>-->
+			<div id='track-info'>
+
+				<div class='top'>
+					<div class='image-cont'>
+						<img class='image' src='https://i.imgur.com/OgvGLJt.jpeg'>
+					</div>
+	
+					<div class='name'>
+						<div class='track'></div>
+						<div class='artist'></div>
+					</div>		
+				</div>
+
+				<div class='bot'>
+					<div class='video-name'>
+						<a class='link' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						<div class='name'></div>
+					</div>	
+				</div>
+			</div>
+			
+			
+			
+			<div id='controls'>
+
+				<div class='section seekbar'>
+					<div class='seekbar-cont'>
+						<div class='number progress'>0:00</div>
+						<div class='bar'>
+							<div class='visual-bar'></div>
+							<div class='filled'></div>
+							<div class='thumb'><div class='visual'></div></div>
+						</div>
+						<div class='number length'>0:00</div>
+					</div>
+				</div>
+
+
+				<div class='section main'>
+					<div class='toggle-button' id='btn-random'><i class='fas fa-random'></i></div>
+					
+					<!-- previous button-->
+					<div class='button' id='previous-button-container'>
+						<div class='icon'  id='btn-previous'>
+							<i class='fas fa-step-backward'></i>
+						</div>
+					</div>	
+					
+					<!-- play/pause button-->
+					<div class='button' id='play-button-container'>
+						<div class='icon'  id='btn-play-pause'>
+							<i class='fas fa-play'></i>
+						</div>
+					</div>	
+					
+					<!-- next button-->
+					<div class='button' id='next-button-container'>
+						<div class='icon'  id='btn-next'>
+							<i class='fas fa-step-forward'></i>
+						</div>
+					</div>
+					
+					<div class='toggle-button'  id='btn-toggle-track-view'><i class='fas fa-music'></i></div> 	
+				</div>	
+
+				
+
+				<div class='section extra'>	
+					<div class='button'>
+						<div class='icon'  id='scroll-to-track-mobile'>
+							<i class='fa-solid fa-crosshairs'></i>
+						</div>
+					</div>	
+
+					<div class='toggle-button'  id='btn-toggle-view'><i class='fas fa-th'></i></div>
+					<div class='toggle-button'  id='btn-hide-video'><i class='fa-brands fa-youtube'></i></div>  	
+				</div>
+				
+				
+				<div class='section volume' id='volume-section'>				
+						<div id='volume-container'>			
+							<div id='btn-mute'><i class='fas fa-volume-up'></i></div>
+							<input id='vol-control' type='range' min='0' max='100' step='1' oninput='setVolume(this.value)' onchange='setVolume(this.value)'></input>
+							<div id='vol-indicator'></div>
+						</div>	
+							
+				</div>
+					
+				<div id='mobile-track-label' class='section label' >
+					<div class='color-light-cont'>
+						<div class='color-light'></div>
+					</div>
+					<div class='label'></div>				
+				</div>
+
+			</div> <!-- #controls -->
+
+	
+
+
+			<div id='player-elem' class='hidden'></div>
+			
+		</div> <!-- #player-area -->
+
+		
+        <script src='js/utilities.js'></script>
+        <script src='js/ui.js'></script>
+		<!--<script src='js/theme.js'></script>-->
+		<script src='js/index.js'></script>
+		<script src='js/preload.js'></script>
+		<script src='js/kebab.js'></script>
+		<script src='js/search.js'></script>
+		<script src='js/hotkeys.js'></script>
+		<script src='js/modal.js'></script>
+		<script src='js/sleeptimer.js'></script>
+		<script src='js/sidebar.js'></script>
+		<script src='js/seekbar.js'></script>
+		<script src='js/link.js'></script>
+		<script src='js/share.js'></script>
+		<script src='https://www.youtube.com/iframe_api'></script>
+	</body>
+</html>

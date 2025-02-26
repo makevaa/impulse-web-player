@@ -1,0 +1,93 @@
+/* title.css */
+
+#topbar > .title-area {
+    width:20%;
+    height: 100%;
+    position:relative;
+    display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+#topbar > .title-area > .image-cont{
+    width:40px;
+    aspect-ratio: 1/1;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    padding:5px;
+    transition: opacity 0.2s;
+    opacity:0;
+}
+
+#topbar > .title-area > .image-cont > img {
+    width:100%;
+    height:100%;
+    aspect-ratio: 1/1;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+}
+
+#topbar > .title-area > .title-cont {
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: start;
+    padding-left:5px;
+    transition: opacity 0.2s;
+    opacity:0;
+}
+
+#topbar > .title-area > .title-cont > .title {
+    margin-left:0px;
+    color:#1db954; 
+    text-shadow:1px 1px 1px rgba(0,0,0,0.9);
+}
+
+#topbar > .title-area > .title-cont > .version {
+    margin-left:0px;
+    color: #5a5a5a;
+    font-size:0.8em;
+    font-family: Roboto Mono, Consolas, monospace;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.9);
+}
+
+#topbar > .title-area > .buttons {
+	width:100%;
+	height:100%;
+    display:none;
+    align-items: center;
+    justify-content: start;
+    user-select: none;
+}
+
+#topbar > .title-area > .buttons > .button {
+	height:100%;
+    aspect-ratio: 1/1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    color: #a19f9f;
+    user-select: none;
+    outline:none;
+}
+
+#topbar > .title-area > .buttons > .button:focus {
+    outline:none;
+}
+
+#topbar > .title-area > .buttons > .button:hover {
+    border: 0px solid red;
+}
+
+#topbar > .title-area > .buttons > .button > i {
+	height:100%;
+    aspect-ratio: 1/1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    outline:none;
+	font-size: 1.5em;
+	transition: text-shadow 0.3s;
+}

@@ -1,0 +1,42 @@
+/* topbar.css
+the banner with playlist data, errors, back-to-playlist button etc
+*/
+
+#topbar {
+	width:100%;
+	max-width:100vw;
+	height:50px;
+	position:fixed;
+	display:flex;
+	justify-content:space-between;
+	align-items: center;
+	flex:1;
+	z-index:4;
+	background-color:#121212;
+}
+
+#status-container {
+	position:absolute;
+	left:0;
+	top:0;
+	padding: 5px;
+	color:#a19f9f;
+	user-select:none;
+	text-shadow: 1px 1px 0px black;
+}
+
+#playlist-info-container {
+	right:0;
+	top:0;	
+	padding: 5px 5px 0px 0px;
+	color:#a19f9f;
+	visibility:hidden;
+	user-select:none;
+	text-shadow: 1px 1px 0px black;
+    text-align:right;
+	font-family:consolas, monospace;
+}
+
+#playlist-length {
+	color:#1eb753;
+}
