@@ -1,8 +1,6 @@
 
 const searchFromPlaylist = () => {
-  if (inPlaylistSelection) {
-    return false;
-  }
+
 
   if (trackView) {
     trackViewOff();
