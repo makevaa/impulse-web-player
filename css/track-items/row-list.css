@@ -1,5 +1,5 @@
 #track-items.row {
-	display:flex;
+	display: flex;
 	flex-direction: column;
 	align-items: start;
 	justify-content: start;
@@ -7,11 +7,11 @@
 }
 
 #track-items.row > .item {
-	border-bottom:1px solid #1d1d1d;
+	border-bottom: 1px solid #1d1d1d;
 	line-height: 1;
 	width: 100%;
-	padding:5px 0px 5px 10px;
-	margin:0px;
+	padding: 5px 0px 5px 10px;
+	margin: 0px;
 	display: flex;
 	align-items:center;
 	justify-content: start;
@@ -32,23 +32,23 @@
 #track-items.row > .item > .info {
 	color: #DCEBDD ;
 	padding: 5px;
-	display:flex;
+	display: flex;
 	flex-direction: column;
 	align-items: start;
 	justify-content: center;
-	font-size:0.9em;
-	margin-left:10px;
-	letter-spacing:0.2px;
+	font-size: 0.9em;
+	margin-left: 10px;
+	letter-spacing: 0.2px;
 }
 
 #track-items.row  > .item > .number {
-	width:50px;
-	height:100%;
+	width: 50px;
+	height: 100%;
 	display: flex;
-	align-items:center;
+	align-items: center;
 	justify-content: center;
-	color:grey;
-	pointer-events:none;
+	color: grey;
+	pointer-events: none;
 }
 
 
