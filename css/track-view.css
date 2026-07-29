@@ -1,13 +1,15 @@
 /* track-view.css | The big track view which shows large album art */
 
 #track-view {
-	background-color:#1c1d21;
+	background-color: #1c1d21;
 	z-index: 3;
-	width:100%;
-	height: calc(100% - 250px + 1px);
-	position:fixed;
-	visibility:hidden;
-	display:flex;
+	width: 100%;
+	height: calc(100% - 200px + 1px);
+	xheight: 100%;
+	position: fixed;
+	top: 0;
+	visibility: hidden;
+	display: flex;
 	flex-direction: column;
     align-items: start;
 	justify-content: end;

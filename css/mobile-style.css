@@ -350,7 +350,7 @@
 	}
 
 	#track-view {
-		height: calc(100% - 350px + 1px);
+		height: calc(100% - 300px + 1px);
 	}
 
 	#track-view > .info > .image-container {
