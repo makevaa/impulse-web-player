@@ -5,6 +5,7 @@
 	-moz-box-sizing: border-box; 
 	box-sizing: border-box;
 	zoom: reset;
+	scrollbar-width: thin;
 }
 
 *:focus {
@@ -50,21 +51,38 @@ body{
 }
 
 #content {
-	position:relative;
-	overflow:hidden;
-	color:#DCEBDD; 
-	display:flex;
-	flex:1;
-	width:100%;
-	height:calc(100vh - 250px);
+	position: relative;
+	overflow: hidden;
+	color: #DCEBDD; 
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	flex: 1;
+	width: 100%;
+	height: calc(100% - 250px);
+
+	padding: 5px 10px 5px 5px;
+}
+
+#right-side {
+	border-radius: 5px;
+	height: 100%;
+	width: 100%;
+	xmargin: 10px 10px 10px 0px;
+	background-color: #121212;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	padding: 10px;
+	transition: opacity 0.2s;
+    opacity: 0;
 }
 
 .clearfix{
-    clear:both
+    clear: both
 }
 
 .page-title{
-	visibility:hidden;
+	visibility: hidden;
 }
 
 .green{
@@ -100,15 +118,4 @@ body{
 	height:300px;
 }
 
-#right-side {
-	border-radius:5px;
-	height:95%;
-	width:95%;
-	margin:10px 10px 10px 0px;
-	background-color:#121212;
-	overflow-y:scroll;
-	scroll-behavior: smooth;
-	padding:10px;
-	transition:opacity 0.2s;
-    opacity:0;
-}
+

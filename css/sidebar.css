@@ -1,12 +1,13 @@
 #sidebar {
-    border-radius:5px;
-    width:30%;
-    height:95%;
-    background-color:#121212;
-    margin: 10px;
-    user-select:none;
-    transition:opacity 0.2s;
-    opacity:0;
+    border-radius: 5px;
+    width: 30%;
+    height: 100%;
+    background-color: #121212;
+    xmargin: 10px;
+    margin-right: 5px;
+    user-select: none;
+    transition: opacity 0.2s;
+    opacity: 0;
 }
 
 #sidebar > .header {
